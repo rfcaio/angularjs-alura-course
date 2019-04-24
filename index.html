@@ -6,8 +6,13 @@
   <title>A simple page</title>
 </head>
 <body>
+  <section ng-controller="PhotoController as $ctrl">
+    <h1>{{$ctrl.title}}</h1>
+  </section>
 
   <script src="node_modules/angular/angular.min.js"></script>
   <script src="src/app.js"></script>
+  <script src="src/photo/photo.module.js"></script>
+  <script src="src/photo/photo.controller.js"></script>
 </body>
 </html>
