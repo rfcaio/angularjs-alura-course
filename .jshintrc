@@ -1,5 +1,7 @@
 {
+  "browser": true,
   "curly": true,
+  "devel": true,
   "eqeqeq": true,
   "globals": {
     "angular": false
