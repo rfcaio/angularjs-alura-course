@@ -8,9 +8,13 @@ module.exports = function (config) {
       'node_modules/angular/angular.js',
       'node_modules/angular-mocks/angular-mocks.js',
       'src/app.js',
+      'src/layout/layout.module.js',
+      'src/layout/panel/panel.module.js',
+      'src/layout/panel/panel.directive.js',
       'src/photo/photo.module.js',
       'src/photo/photo.controller.js',
-      'spec/photo/photo.controller.spec.js'
+      'spec/photo/photo.controller.spec.js',
+      'spec/layout/panel/panel.directive.spec.js'
     ],
     frameworks: ['jasmine']
   });

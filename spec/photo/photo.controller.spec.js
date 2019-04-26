@@ -18,10 +18,6 @@ describe('PhotoController', function () {
     $httpBackend.verifyNoOutstandingRequest();
   });
 
-  it('should have a property `title` equals to `PhotoController`', function () {
-    expect(PhotoController.title).toEqual('PhotoController');
-  });
-
   describe('$onInit', function () {
     it('should fetch photos', function () {
       $httpBackend.expect('GET', 'https://jsonplaceholder.typicode.com/photos').respond(200, [{ id: '1' }, { id: '2' }]);

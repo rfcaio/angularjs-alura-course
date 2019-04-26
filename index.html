@@ -7,13 +7,16 @@
 </head>
 <body>
   <section ng-controller="PhotoController as $ctrl">
-    <div ng-repeat="photo in $ctrl.photos track by photo.id">
+    <panel title="{{::photo.title}}" ng-repeat="photo in $ctrl.photos track by photo.id">
       <img ng-src="{{::photo.thumbnailUrl}}" alt="{{::photo.title}}">
-    </div>
+    </panel>
   </section>
 
   <script src="node_modules/angular/angular.js"></script>
   <script src="src/app.js"></script>
+  <script src="src/layout/layout.module.js"></script>
+  <script src="src/layout/panel/panel.module.js"></script>
+  <script src="src/layout/panel/panel.directive.js"></script>
   <script src="src/photo/photo.module.js"></script>
   <script src="src/photo/photo.controller.js"></script>
 </body>
