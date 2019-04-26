@@ -7,10 +7,12 @@
 </head>
 <body>
   <section ng-controller="PhotoController as $ctrl">
-    <h1>{{$ctrl.title}}</h1>
+    <div ng-repeat="photo in $ctrl.photos track by photo.id">
+      <img ng-src="{{::photo.thumbnailUrl}}" alt="{{::photo.title}}">
+    </div>
   </section>
 
-  <script src="node_modules/angular/angular.min.js"></script>
+  <script src="node_modules/angular/angular.js"></script>
   <script src="src/app.js"></script>
   <script src="src/photo/photo.module.js"></script>
   <script src="src/photo/photo.controller.js"></script>
