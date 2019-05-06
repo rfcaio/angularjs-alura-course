@@ -18,6 +18,10 @@ describe('PhotoController', function () {
     $httpBackend.verifyNoOutstandingRequest();
   });
 
+  it('should init `filter` property as an empty string', function () {
+    expect(PhotoController.filter).toEqual('');
+  });
+
   describe('$onInit', function () {
     it('should fetch photos', function () {
       $httpBackend.expect('GET', 'https://jsonplaceholder.typicode.com/photos').respond(200, [{ id: '1' }, { id: '2' }]);

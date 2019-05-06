@@ -4,6 +4,9 @@
 
   angular
     .module('app', [
+      // vendor
+      'ngAnimate',
+
       'app.layout',
       'app.photo'
     ]);

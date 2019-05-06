@@ -9,6 +9,8 @@
   function PhotoController ($http) {
     var vm = this;
 
+    vm.filter = '';
+
     vm.$onInit = function $onInit () {
       $http.get('https://jsonplaceholder.typicode.com/photos')
         .then(function (response) {
