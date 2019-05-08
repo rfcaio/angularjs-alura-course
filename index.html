@@ -1,28 +1,22 @@
 <!doctype html>
 <html lang="en" ng-app="app" ng-strict-di>
 <head>
+  <base href="/">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>A simple page</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <section ng-controller="PhotoController as $ctrl">
-    <div>
-      <input placeholder="Filter" type="text" ng-model="$ctrl.filter">
-    </div>
-
-    <!-- TODO: add animations on filter change -->
-    <panel title="{{::photo.title}}" ng-repeat="photo in $ctrl.photos | filter:$ctrl.filter track by photo.id">
-      <img ng-src="{{::photo.thumbnailUrl}}" alt="{{::photo.title}}">
-    </panel>
-  </section>
+  <ng-view></ng-view>
 
   <!-- vendor -->
   <script src="node_modules/angular/angular.js"></script>
   <script src="node_modules/angular-animate/angular-animate.js"></script>
+  <script src="node_modules/angular-route/angular-route.js"></script>
 
   <script src="src/app.js"></script>
+  <script src="src/app.routes.js"></script>
   <script src="src/layout/layout.module.js"></script>
   <script src="src/layout/panel/panel.module.js"></script>
   <script src="src/layout/panel/panel.directive.js"></script>

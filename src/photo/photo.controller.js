@@ -20,6 +20,8 @@
           console.error(error);
         });
     };
+
+    vm.$onInit();
   }
 
   PhotoController.$inject = ['$http'];

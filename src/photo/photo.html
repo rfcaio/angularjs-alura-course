@@ -1,0 +1,10 @@
+<section>
+  <div>
+    <input placeholder="Filter" type="text" ng-model="$ctrl.filter">
+  </div>
+
+  <!-- TODO: add animations on filter change -->
+  <panel title="{{::photo.title}}" ng-repeat="photo in $ctrl.photos | filter:$ctrl.filter track by photo.id">
+    <img ng-src="{{::photo.thumbnailUrl}}" alt="{{::photo.title}}">
+  </panel>
+</section>
