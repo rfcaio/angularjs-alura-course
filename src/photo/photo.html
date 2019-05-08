@@ -1,6 +1,10 @@
 <section>
   <div>
-    <input placeholder="Filter" type="text" ng-model="$ctrl.filter">
+    <input
+      placeholder="Filter"
+      type="text"
+      ng-model="$ctrl.filter"
+      ng-model-options="{ debounce: 500 }">
   </div>
 
   <!-- TODO: add animations on filter change -->
