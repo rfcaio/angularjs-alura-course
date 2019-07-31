@@ -14,6 +14,8 @@
           templateUrl: 'src/photo/photo.html'
         })
         .when('/photo/create', {
+          controller: 'PhotoCreateController',
+          controllerAs: '$ctrl',
           templateUrl: 'src/photo/photo-create.html'
         })
         .otherwise({

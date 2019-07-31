@@ -13,7 +13,9 @@ module.exports = function (config) {
       'src/layout/panel/panel.directive.js',
       'src/photo/photo.module.js',
       'src/photo/photo.controller.js',
+      'src/photo/photo-create.controller.js',
       'spec/photo/photo.controller.spec.js',
+      'spec/photo/photo-create.controller.spec.js',
       'spec/layout/panel/panel.directive.spec.js'
     ],
     frameworks: ['jasmine']
