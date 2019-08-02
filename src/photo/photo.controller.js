@@ -10,6 +10,7 @@
     var vm = this;
 
     vm.filter = '';
+    vm.message = '';
 
     vm.$onInit = function $onInit () {
       $http.get('https://jsonplaceholder.typicode.com/photos')
@@ -18,6 +19,19 @@
         })
         .catch(function (error) {
           console.error(error);
+        });
+    };
+
+    vm.deletePhoto = function deletePhoto (id) {
+      $http.delete('https://jsonplaceholder.typicode.com/photos/' + id)
+        .then(function () {
+          vm.message = 'Deleted.';
+          vm.photos = vm.photos.filter(function (photo) {
+            return photo.id !== id;
+          });
+        })
+        .catch(function () {
+          vm.message = 'Could not delete photo.';
         });
     };
 

@@ -18,6 +18,11 @@
           controllerAs: '$ctrl',
           templateUrl: 'src/photo/photo-create.html'
         })
+        .when('/photo/update/:id', {
+          controller: 'PhotoUpdateController',
+          controllerAs: '$ctrl',
+          templateUrl: 'src/photo/photo-update.html'
+        })
         .otherwise({
           redirectTo: '/photo'
         });

@@ -23,8 +23,8 @@ describe('PhotoCreateController', function () {
 
   describe('createPhoto', function () {
     it('should define `message` property as `Created.` if the request is made successfully', function () {
+      PhotoCreateController.photo = { title: 'Some photo', url: 'http://some/photo/' };
       $httpBackend.expect('POST', 'https://jsonplaceholder.typicode.com/photos').respond(201);
-      PhotoCreateController.photo = { title: 'A photo', url: '/path/to/photo/' };
       expect(PhotoCreateController.message).toEqual('');
       PhotoCreateController.createPhoto();
       $httpBackend.flush();
@@ -34,8 +34,8 @@ describe('PhotoCreateController', function () {
     });
 
     it('should restart `photo` property if the request is made successfully', function () {
+      PhotoCreateController.photo = { title: 'Some photo', url: 'http://some/photo' };
       $httpBackend.expect('POST', 'https://jsonplaceholder.typicode.com/photos').respond(201);
-      PhotoCreateController.photo = { title: 'A photo', url: '/path/to/photo/' };
       PhotoCreateController.createPhoto();
       $httpBackend.flush();
       expect(PhotoCreateController.photo).toEqual({ title: '', url: '' });
@@ -44,8 +44,8 @@ describe('PhotoCreateController', function () {
     });
 
     it('should define `message` property as `Could not create photo.` if the request is not made successfully', function () {
+      PhotoCreateController.photo = { title: 'Some photo', url: 'http://some/photo' };
       $httpBackend.expect('POST', 'https://jsonplaceholder.typicode.com/photos').respond(500);
-      PhotoCreateController.photo = { title: 'A photo', url: '/path/to/photo/' };
       expect(PhotoCreateController.message).toEqual('');
       PhotoCreateController.createPhoto();
       $httpBackend.flush();

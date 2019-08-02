@@ -1,0 +1,37 @@
+<h1>Update photo</h1>
+
+<a href="/">Back</a>
+
+<form name="photoUpdateForm" novalidate ng-submit="$ctrl.updatePhoto()">
+  <div>
+    <label>Title</label>
+    <input name="title" required type="text" ng-maxlength="8" ng-model="$ctrl.photo.title">
+    <span
+      style="color: crimson;"
+      ng-if="photoUpdateForm.title.$error.required"
+    >
+      Required field.
+    </span>
+    <span
+      style="color: crimson;"
+      ng-if="photoUpdateForm.title.$error.maxlength"
+    >
+      The title is too long.
+    </span>
+  </div>
+
+  <div>
+    <label>URL</label>
+    <input name="url" required type="text" ng-model="$ctrl.photo.url">
+    <span
+      style="color: crimson;"
+      ng-if="photoUpdateForm.url.$error.required"
+    >
+      Required field.
+    </span>
+  </div>
+
+  <div>
+    <button ng-disabled="photoUpdateForm.$invalid">Save</button>
+  </div>
+</form>

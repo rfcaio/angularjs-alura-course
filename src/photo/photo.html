@@ -12,5 +12,7 @@
   <!-- TODO: add animations on filter change -->
   <panel title="{{::photo.title}}" ng-repeat="photo in $ctrl.photos | filter:$ctrl.filter track by photo.id">
     <img ng-src="{{::photo.thumbnailUrl}}" alt="{{::photo.title}}">
+    <a href="/photo/update/{{::photo.id}}">Update</a>
+    <button type="button" ng-click="$ctrl.deletePhoto(photo.id)">Remove</button>
   </panel>
 </section>

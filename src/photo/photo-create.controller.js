@@ -22,8 +22,7 @@
           vm.message = 'Created.';
         })
         .then(restartForm)
-        .catch(function (error) {
-          console.error(error);
+        .catch(function () {
           vm.message = 'Could not create photo.';
         });
     };
