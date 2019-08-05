@@ -6,7 +6,7 @@
     .module('app.photo')
     .controller('PhotoUpdateController', PhotoUpdateController);
 
-  function PhotoUpdateController ($http, $routeParams) {
+  function PhotoUpdateController ($routeParams, PhotoService) {
     var vm = this;
 
     vm.message = '';
@@ -16,7 +16,7 @@
     };
 
     vm.$onInit = function $onInit () {
-      $http.get('https://jsonplaceholder.typicode.com/photos/' + $routeParams.id)
+      PhotoService.getById($routeParams.id)
         .then(function (response) {
           var photo = response.data;
           vm.photo = {
@@ -30,7 +30,7 @@
     };
 
     vm.updatePhoto = function updatePhoto () {
-      $http.put('https://jsonplaceholder.typicode.com/photos/' + $routeParams.id, vm.photo)
+      PhotoService.update($routeParams.id, vm.photo)
         .then(function () {
           vm.message = 'Updated.';
         })
@@ -42,5 +42,5 @@
     vm.$onInit();
   }
 
-  PhotoUpdateController.$inject = ['$http', '$routeParams'];
+  PhotoUpdateController.$inject = ['$routeParams', 'PhotoService'];
 }());

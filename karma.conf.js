@@ -13,9 +13,11 @@ module.exports = function (config) {
       'src/layout/panel/panel.directive.js',
       'src/photo/photo.module.js',
       'src/photo/photo.controller.js',
+      'src/photo/photo.service.js',
       'src/photo/photo-create.controller.js',
       'src/photo/photo-update.controller.js',
       'spec/photo/photo.controller.spec.js',
+      'spec/photo/photo.service.spec.js',
       'spec/photo/photo-create.controller.spec.js',
       'spec/photo/photo-update.controller.spec.js',
       'spec/layout/panel/panel.directive.spec.js'

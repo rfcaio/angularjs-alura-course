@@ -6,7 +6,7 @@
     .module('app.photo')
     .controller('PhotoCreateController', PhotoCreateController);
 
-  function PhotoCreateController ($http) {
+  function PhotoCreateController (PhotoService) {
     var defaultPhoto = {
       title: '',
       url: ''
@@ -17,7 +17,7 @@
     vm.photo = Object.assign({}, defaultPhoto);
 
     vm.createPhoto = function createPhoto () {
-      $http.post('https://jsonplaceholder.typicode.com/photos', vm.photo)
+      PhotoService.create(vm.photo)
         .then(function () {
           vm.message = 'Created.';
         })
@@ -32,5 +32,5 @@
     };
   }
 
-  PhotoCreateController.$inject = ['$http'];
+  PhotoCreateController.$inject = ['PhotoService'];
 }());

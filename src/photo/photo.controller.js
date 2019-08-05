@@ -6,14 +6,14 @@
     .module('app.photo')
     .controller('PhotoController', PhotoController);
 
-  function PhotoController ($http) {
+  function PhotoController (PhotoService) {
     var vm = this;
 
     vm.filter = '';
     vm.message = '';
 
     vm.$onInit = function $onInit () {
-      $http.get('https://jsonplaceholder.typicode.com/photos')
+      PhotoService.getAll()
         .then(function (response) {
           vm.photos = response.data.slice(0, 10);
         })
@@ -23,7 +23,7 @@
     };
 
     vm.deletePhoto = function deletePhoto (id) {
-      $http.delete('https://jsonplaceholder.typicode.com/photos/' + id)
+      PhotoService.remove(id)
         .then(function () {
           vm.message = 'Deleted.';
           vm.photos = vm.photos.filter(function (photo) {
@@ -38,5 +38,5 @@
     vm.$onInit();
   }
 
-  PhotoController.$inject = ['$http'];
+  PhotoController.$inject = ['PhotoService'];
 }());
