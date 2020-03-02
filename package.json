@@ -1,4 +1,6 @@
 {
+  "name": "angularjs-alura-course",
+  "description": "A simple app based on Alura's AngularJS course.",
   "author": {
     "email": "rfcaio90@gmail.com",
     "name": "Caio Rodrigues Fernandes",
@@ -9,7 +11,6 @@
     "angular-animate": "1.7.9",
     "angular-route": "1.7.9"
   },
-  "description": "A simple app based on Alura's AngularJS course.",
   "devDependencies": {
     "angular-mocks": "1.7.9",
     "husky": "1.0.0",
@@ -29,7 +30,6 @@
     }
   },
   "license": "MIT",
-  "name": "angularjs-alura-course",
   "private": true,
   "repository": {
     "type": "git",
