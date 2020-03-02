@@ -1,5 +1,6 @@
 {
   "name": "angularjs-alura-course",
+  "version": "0.0.0",
   "description": "A simple app based on Alura's AngularJS course.",
   "author": {
     "email": "rfcaio90@gmail.com",
@@ -42,6 +43,5 @@
     "start": "lite-server",
     "test": "karma start --reporters progress --single-run",
     "test:watch": "karma start --no-single-run --reporters spec"
-  },
-  "version": "1.0.0"
+  }
 }
