@@ -37,9 +37,7 @@
     "url": "https://github.com/rfcaio/angularjs-alura-course.git"
   },
   "scripts": {
-    "lint": "npm run lint:src && npm run lint:test",
-    "lint:src": "jshint src/",
-    "lint:test": "jshint spec/",
+    "lint": "jshint src/",
     "start": "lite-server",
     "test": "karma start --reporters progress --single-run",
     "test:watch": "karma start --no-single-run --reporters spec"
